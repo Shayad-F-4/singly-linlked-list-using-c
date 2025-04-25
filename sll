@@ -41,18 +41,18 @@ void InsertAtEnd() {
      printf("%d Inserted at end..",newnode->data);
  }
 
-void delete_begin() {
+void DeleteAtFirst() {
     if (head == NULL) {
         printf("List is empty.\n");
     } else {
         struct node *temp = head;
         head = head->next;
         free(temp);
-        printf("Deleted from beginning.\n");
+
     }
 }
 
-void delete_end() {
+void DeleteAtEnd() {
     if (head == NULL) {
         printf("List is empty.\n");
     } else if (head->next == NULL) {
@@ -68,7 +68,7 @@ void delete_end() {
         }
         prev->next = NULL;
         free(temp);
-        printf("Deleted from end.\n");
+       
     }
 }
 
@@ -97,10 +97,10 @@ int main() {
         printf("6. Exit\n");
         scanf("%d", &choice);
 
-        if (choice == 1) insert_begin();
-        else if (choice == 2) insert_end();
-        else if (choice == 3) delete_begin();
-        else if (choice == 4) delete_end();
+        if (choice == 1) InsertAtFirst();
+        else if (choice == 2) InsertAtEnd();
+        else if (choice == 3) DeleteAtFirst();
+        else if (choice == 4) DeleteAtEnd();
         else if (choice == 5) display();
         else if (choice == 6) printf("Exit Sucessfully...\n");
         else printf("Invalid choice(Try Agian...)\n");
