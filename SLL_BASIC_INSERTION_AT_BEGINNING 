@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int data;              // Node data
+    struct node* next;     // Pointer to next node
+};
+
+int main() {
+    struct node* head = NULL;     // Head of the list
+    struct node* temp = NULL;     //Temporary pointer to print and travel the throughout 
+    struct node* newnode = NULL;  // New node pointer variable 
+    int choice = 1;
+
+    
+    while (choice == 1) {
+        newnode = (struct node*)malloc(sizeof(struct node));  // Allocate memory
+        printf("Enter data: ");
+        scanf("%d", &newnode->data);  // Input data
+
+        newnode->next = NULL;  // Last node points to NULL
+
+        if (head == NULL) {  // If list is empty
+            head = newnode;  // New node is the head
+            temp = head;     // Temp points to head
+        } else {
+            temp->next = newnode;  // Link to new node
+            temp = newnode;        // Move temp to new node
+        }
+
+        printf("Add another node? (1=YES || 0=NO):");
+        scanf("%d", &choice);  
+    }
+    temp = head;  // Move temp throughout 
+    printf("Linked List: ");
+    while (temp != NULL) {
+        printf("%d -", temp->data);  
+        temp = temp->next;             // Move to next node
+    }
+    printf("NULL\n");  // End of list
+
+    return 0;
+}
