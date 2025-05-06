@@ -7,8 +7,6 @@ struct node {
 };
 
 struct node *head = NULL, *newnode, *temp, *temp1, *temp2;
-
-// Insert at beginning
 void InsertAtFirst() {
     newnode = malloc(sizeof(struct node));
     printf("Enter data: ");
@@ -18,7 +16,7 @@ void InsertAtFirst() {
     printf("%d Inserted at beginning\n", newnode->data);
 }
 
-// Insert at end
+
 void InsertAtEnd() {
     newnode = malloc(sizeof(struct node));
     printf("Enter data: ");
@@ -37,7 +35,7 @@ void InsertAtEnd() {
     printf("%d Inserted at end\n", newnode->data);
 }
 
-// Insert at given position
+
 void InsertAtPosition() {
     int pos, i = 1;
     printf("Enter position: ");
@@ -75,7 +73,7 @@ void InsertAtPosition() {
     }
 }
 
-// Delete from beginning
+
 void DeleteAtFirst() {
     if (head == NULL) {
         printf("List is empty.\n");
@@ -87,7 +85,7 @@ void DeleteAtFirst() {
     }
 }
 
-// Delete from end
+
 void DeleteAtEnd() {
     if (head == NULL) {
         printf("List is empty.\n");
@@ -106,7 +104,7 @@ void DeleteAtEnd() {
     }
 }
 
-// Delete at given position
+
 void DeleteAtPosition() {
     int pos, i = 1;
     printf("Enter position to delete: ");
@@ -141,7 +139,7 @@ void DeleteAtPosition() {
     }
 }
 
-// Display the list
+
 void display() {
     temp = head;
     if (temp == NULL) {
@@ -156,11 +154,10 @@ void display() {
     }
 }
 
-// Main function
 int main() {
     int choice;
     do {
-        printf("\n--- Menu ---\n");
+        printf("\nMenu\n");
         printf("1. Insert at Beginning\n");
         printf("2. Insert at End\n");
         printf("3. Delete from Beginning\n");
