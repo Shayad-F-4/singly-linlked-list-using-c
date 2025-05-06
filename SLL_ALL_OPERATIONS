@@ -140,6 +140,27 @@ void DeleteAtPosition() {
 }
 
 
+void search(){
+	int el;
+	printf("Enter element to check: ");
+	scanf("%d",&el);
+	temp=head;
+	while(temp->data!=el){
+		temp=temp->next;
+	}
+	printf("Element present\n\n");
+	}
+	
+void count(){
+	int c=0;
+	temp=head;
+	while(temp != NULL){
+		c+=1;
+		temp=temp->next;
+	}
+	printf("total no. of count %d",c);
+}
+			
 void display() {
     temp = head;
     if (temp == NULL) {
@@ -166,6 +187,8 @@ int main() {
         printf("6. Insert at Position\n");
         printf("7. Delete at Position\n");
         printf("8. Exit\n");
+        printf("9. search el\n");
+        printf("11. count el\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -173,10 +196,13 @@ int main() {
         else if (choice == 2) InsertAtEnd();
         else if (choice == 3) DeleteAtFirst();
         else if (choice == 4) DeleteAtEnd();
-        else if (choice == 5) display();
+         else if(choice == 11) count();
+         else if (choice == 5) display();
         else if (choice == 6) InsertAtPosition();
         else if (choice == 7) DeleteAtPosition();
         else if (choice == 8) printf("Exit Successfully...\n");
+        else if(choice == 9) search();
+       
         else printf("Invalid choice! Try again...\n");
 
     } while (choice != 8);
