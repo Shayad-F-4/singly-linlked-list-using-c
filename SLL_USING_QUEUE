@@ -10,7 +10,9 @@ struct node *front = NULL, *rear = NULL;
 
 // Enqueue operation
 void enqueue(int value) {
-    struct node *newNode = (struct node *)malloc(sizeof(struct node));
+
+    newNode = malloc(sizeof(struct node));
+
     newNode->data = value;
     newNode->next = NULL;
 
@@ -40,7 +42,7 @@ void dequeue() {
 
 // Display operation
 void display() {
-    struct node *temp = front;
+    temp = front;
     if (temp == NULL) {
         printf("Queue is empty!\n");
         return;
