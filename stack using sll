@@ -9,18 +9,21 @@ struct node {
 struct node *newnode,*temp, *top=NULL;
 
 void push() {
+
     newnode = malloc(sizeof(struct node));
     printf("Enter data: ");
     scanf("%d",&newnode->data);
+
     newnode->next=top;
     top=newnode;
+
     printf(" %d Pushed\n",newnode->data);
     }
 
 
 void pop() {
-     newnode = malloc(sizeof(struct node));
-      struct node *temp = top;
+ 
+    temp = top;
      if (top==NULL) {
         printf("Stack Empty! \n");
      } else {
@@ -30,7 +33,8 @@ void pop() {
 }
 
 void display() {
-     struct node *temp = top;
+     
+    temp = top;
     if (temp == NULL) {
         printf("Stack is empty.\n");
     } else {
